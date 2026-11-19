@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Респект-Холл — отель и апартаменты в Екатеринбурге (концепт дизайна)</title>
+<meta name="description" content="Концепт нового дизайна сайта: отель «Респект-Холл» и апартаменты «Свобода Респект», Екатеринбург.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf6ef;--ink:#23201c;--mut:#6d655b;--gold:#b8893b;--gold2:#d9ae62;--dark:#1d1a17;--card:#fff;--line:#e8dfd0}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;font-size:17px}
+h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:600;line-height:1.1}
+a{color:inherit}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+.demo{background:var(--dark);color:#e9d9b5;text-align:center;font-size:13px;padding:7px 12px}
+header{position:sticky;top:0;z-index:20;background:rgba(250,246,239,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:66px;gap:16px}
+.logo{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;letter-spacing:.5px;text-decoration:none}
+.logo span{color:var(--gold)}
+nav.links{display:flex;gap:26px;font-size:15px}
+nav.links a{text-decoration:none;color:var(--mut)}
+nav.links a:hover{color:var(--ink)}
+.btn{display:inline-block;background:var(--gold);color:#fff;padding:13px 26px;border-radius:40px;text-decoration:none;font-weight:600;font-size:15px;border:0;cursor:pointer;transition:.2s}
+.btn:hover{background:#a07530;transform:translateY(-1px)}
+.btn.ghost{background:transparent;border:1.5px solid #fff;color:#fff}
+.btn.ghost:hover{background:#fff;color:var(--ink)}
+.hero{position:relative;color:#fff;min-height:82vh;display:flex;align-items:center;background:#222 center/cover;transition:background-image .4s}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,16,12,.78),rgba(20,16,12,.25))}
+.hero .wrap{position:relative;padding-top:60px;padding-bottom:60px}
+.hero small{letter-spacing:3px;text-transform:uppercase;color:var(--gold2);font-size:13px}
+.hero h1{font-size:clamp(42px,7vw,84px);margin:14px 0 18px;max-width:760px}
+.hero p{max-width:560px;font-size:19px;opacity:.92;margin-bottom:30px}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+.switch{display:inline-flex;background:rgba(255,255,255,.15);backdrop-filter:blur(8px);border-radius:40px;padding:5px;margin-bottom:26px}
+.switch button{border:0;background:transparent;color:#fff;padding:10px 22px;border-radius:40px;font:600 14px Inter;cursor:pointer}
+.switch button.on{background:#fff;color:var(--ink)}
+.facts{background:var(--dark);color:#fff}
+.facts .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding-top:26px;padding-bottom:26px;text-align:center}
+.facts b{display:block;font:600 36px 'Cormorant Garamond',serif;color:var(--gold2)}
+.facts span{font-size:14px;opacity:.8}
+section{padding:84px 0}
+.eyebrow{color:var(--gold);letter-spacing:3px;text-transform:uppercase;font-size:12px;font-weight:600}
+h2{font-size:clamp(34px,4.5vw,52px);margin:10px 0 18px}
+.lead{color:var(--mut);max-width:680px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:26px;margin-top:44px}
+.card{background:var(--card);border-radius:18px;overflow:hidden;box-shadow:0 8px 30px rgba(60,40,10,.08)}
+.card img{width:100%;height:240px;object-fit:cover;display:block}
+.card .b{padding:24px}
+.card h3{font-size:28px;margin-bottom:6px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 20px}
+.tags i{font-style:normal;font-size:13px;background:#f3ebdb;border-radius:20px;padding:4px 12px;color:#6b5428}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:40px}
+.gal img{width:100%;height:210px;object-fit:cover;border-radius:12px;display:block;cursor:zoom-in;transition:.25s}
+.gal img:hover{transform:scale(1.02)}
+.gal img:first-child{grid-column:span 2;grid-row:span 2;height:430px}
+.feat{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px;margin-top:42px}
+.feat div{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px}
+.feat em{font-style:normal;font-size:30px;display:block;margin-bottom:8px}
+.feat h3{font-size:22px;margin-bottom:6px}
+.feat p{font-size:15px;color:var(--mut)}
+.dark{background:var(--dark);color:#fff}
+.dark .lead{color:#cfc6b8}
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-top:38px}
+.rules div{border:1px solid #3a342d;border-radius:16px;padding:24px}
+.rules b{font:600 40px 'Cormorant Garamond',serif;color:var(--gold2);display:block}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.contact ul{list-style:none;margin-top:20px}
+.contact li{padding:14px 0;border-bottom:1px solid var(--line)}
+.contact li small{display:block;color:var(--mut);font-size:13px}
+.contact a{text-decoration:none;font-weight:600;font-size:20px}
+.mess{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.mess a{padding:11px 20px;border-radius:30px;text-decoration:none;font-weight:600;font-size:14px;color:#fff}
+.wa{background:#25a244}.tg{background:#2a8fd0}.mx{background:#6a4fe0}
+footer{background:#14110e;color:#9b9285;text-align:center;padding:34px 20px;font-size:14px}
+.obj{display:none}.obj.on{display:block}.facts .obj.on{display:grid}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.9);display:none;align-items:center;justify-content:center;z-index:50;cursor:zoom-out}
+#lb img{max-width:94vw;max-height:92vh;border-radius:8px}
+.fab{position:fixed;right:18px;bottom:18px;z-index:30;display:none}
+@media(max-width:820px){
+ nav.links{display:none}
+ .facts .wrap{grid-template-columns:repeat(2,1fr)}
+ .gal{grid-template-columns:repeat(2,1fr)}.gal img:first-child{grid-column:span 2;grid-row:auto;height:260px}.gal img{height:150px}
+ .contact{grid-template-columns:1fr}
+ section{padding:56px 0}
+ .fab{display:block}
+}
+</style>
+</head>
+<body>
+<div class="demo">Концепт нового дизайна — демонстрационная версия, не является действующим сайтом</div>
+
+<header><div class="wrap nav">
+ <a class="logo" href="#top">РЕСПЕКТ<span>·</span>ХОЛЛ</a>
+ <nav class="links"><a href="#about">О нас</a><a href="#rooms">Номера</a><a href="#services">Услуги</a><a href="#rules">Правила</a><a href="#contacts">Контакты</a></nav>
+ <a class="btn" href="#contacts">Забронировать</a>
+</div></header>
+
+<div class="hero" id="top">
+ <div class="wrap">
+  <div class="switch" role="tablist">
+   <button class="on" data-o="hotel">Отель «Респект-Холл»</button>
+   <button data-o="apt">Апартаменты «Свобода»</button>
+  </div>
+  <div class="obj on" data-o="hotel">
+   <small>Екатеринбург · ул. Авиационная, 57</small>
+   <h1>Самый уютный и респектабельный отель города</h1>
+   <p>14 номеров после капитального ремонта. Домашняя атмосфера, завтрак и ресепшн 24 часа. 5 минут до метро.</p>
+   <div class="cta"><a class="btn" href="#contacts">Забронировать номер</a><a class="btn ghost" href="#rooms">Смотреть номера</a></div>
+  </div>
+  <div class="obj" data-o="apt">
+   <small>Екатеринбург · ул. Радищева, 41</small>
+   <h1>Светлые апартаменты в самом центре</h1>
+   <p>Панорамные окна, современный ремонт и всё для комфортной жизни. 5 минут до центра, рядом набережная и ботанический сад.</p>
+   <div class="cta"><a class="btn" href="#contacts">Забронировать</a><a class="btn ghost" href="#rooms">Смотреть апартаменты</a></div>
+  </div>
+ </div>
+</div>
+
+<div class="facts"><div class="wrap obj on" data-o="hotel">
+ <div><b>14</b><span>уютных номеров</span></div><div><b>24/7</b><span>ресепшн без выходных</span></div><div><b>5 мин</b><span>до метро «Чкаловская»</span></div><div><b>Wi-Fi</b><span>бесплатно по всему отелю</span></div>
+</div></div>
+<div class="facts"><div class="wrap obj" data-o="apt">
+ <div><b>5 мин</b><span>до центра города</span></div><div><b>10 мин</b><span>до главных достопримечательностей</span></div><div><b>14:00</b><span>заезд, выезд до 12:00</span></div><div><b>Памятка</b><span>с инструкцией заселения</span></div>
+</div></div>
+
+<!-- ===== ОТЕЛЬ ===== -->
+<div class="obj on" data-o="hotel">
+<section data-id="about"><div class="wrap">
+ <div class="eyebrow">О нас</div>
+ <h2>Вы — не клиент, а желанный гость</h2>
+ <p class="lead">Отель вновь открыл двери после капитального ремонта. Небольшое количество номеров придаёт гостинице особый домашний уют: персонал позаботится о комфорте и сервисе, чтобы от пребывания в Екатеринбурге остались только приятные воспоминания.</p>
+ <div class="feat">
+  <div><em>🚇</em><h3>Рядом с метро</h3><p>5 минут до станции «Чкаловская», рядом Южный автовокзал, трамваи и автобусы.</p></div>
+  <div><em>🚆</em><h3>Быстро до вокзала и аэропорта</h3><p>До ж/д вокзала, аэропорта и центра города — около 20 минут.</p></div>
+  <div><em>🏠</em><h3>Домашний уют</h3><p>Всего 14 номеров — внимание к каждому гостю.</p></div>
+ </div>
+</div></section>
+
+<section data-id="rooms" style="background:#f3ebdb"><div class="wrap">
+ <div class="eyebrow">Номера</div>
+ <h2>Выберите свой номер</h2>
+ <div class="cards">
+  <div class="card"><img src="https://static.tildacdn.com/tild6262-3332-4662-b265-363962303935/IMG_1498.jpg" alt="Стандартный номер" loading="lazy"><div class="b"><h3>Стандартный номер</h3><p style="color:var(--mut)">16–18 м². Одна кровать или две раздельные.</p><div class="tags"><i>Ортопедический матрас</i><i>Кондиционер</i><i>Сейф</i><i>Душевая кабина</i><i>Холодильник</i><i>Wi-Fi</i></div><a class="btn" href="#contacts">Забронировать</a></div></div>
+  <div class="card"><img src="https://static.tildacdn.com/tild6639-3435-4430-a630-373031636238/IMG_1504.jpg" alt="Улучшенный двухместный номер" loading="lazy"><div class="b"><h3>Улучшенный двухместный</h3><p style="color:var(--mut)">18–22 м². Просторное рабочее место, ванна или душ.</p><div class="tags"><i>Рабочее место</i><i>Большая ванна</i><i>Тапочки</i><i>Кондиционер</i><i>Сейф</i><i>Wi-Fi</i></div><a class="btn" href="#contacts">Забронировать</a></div></div>
+ </div>
+ <div class="gal">
+  <img src="https://static.tildacdn.com/tild3731-3338-4964-b538-646164613639/IMG_1576.jpg" alt="" loading="lazy">
+  <img src="https://static.tildacdn.com/tild6634-6633-4763-b138-313332333533/DSC00517.jpg" alt="" loading="lazy">
+  <img src="https://static.tildacdn.com/tild3063-3766-4264-b564-393132376334/IMG_1562.jpg" alt="" loading="lazy">
+  <img src="https://static.tildacdn.com/tild3133-3333-4437-b064-633062626166/IMG_1587.jpg" alt="" loading="lazy">
+  <img src="https://static.tildacdn.com/tild3537-3534-4164-a163-616564396334/IMG_1261.jpg" alt="" loading="lazy">
+  <img src="https://static.tildacdn.com/tild3363-6435-4864-b936-653739326130/IMG_1393.jpg" alt="" loading="lazy">
+  <img src="https://static.tildacdn.com/tild3234-3531-4138-b564-353135396563/IMG_1267.jpg" alt="" loading="lazy">
+ </div>
+ <p style="color:var(--mut);font-size:14px;margin-top:16px">В номере также: телевизор, телефон, фен, туалетные принадлежности, набор полотенец. Наличие спутниковых каналов и балкона уточняйте у администратора.</p>
+</div></section>
+
+<section data-id="services"><div class="wrap">
+ <div class="eyebrow">Услуги</div>
+ <h2>Всё для комфортного отдыха</h2>
+ <div class="feat">
+  <div><em>🥐</em><h3>Завтрак 7:00–11:00</h3><p>Шведский стол или в номер: каша или омлет, сосиски, свежий хлеб, йогурт, сыр, джем, сок, чай и натуральный кофе.</p></div>
+  <div><em>☕</em><h3>Мини-кухня</h3><p>Тостер, кофемашина, чайник, кулер и микроволновка — к вашим услугам.</p></div>
+  <div><em>🗺️</em><h3>Помощь на ресепшн</h3><p>Бесплатная карта города, подсказки, куда сходить, и заказ такси.</p></div>
+  <div><em>🛁</em><h3>Своя ванная</h3><p>В каждом номере — ванная, фен и свежие полотенца.</p></div>
+  <div><em>📶</em><h3>Бесплатный Wi-Fi</h3><p>Быстрый интернет на всей территории отеля.</p></div>
+  <div><em>🅿️</em><h3>Парковка</h3><p>Своей парковки нет, рядом — городская.</p></div>
+ </div>
+</div></section>
+
+<section data-id="rules" class="dark"><div class="wrap">
+ <div class="eyebrow">Правила отеля</div>
+ <h2>Несколько простых правил</h2>
+ <p class="lead">Мы уважаем гостей и просим отнестись с пониманием к соседям: шумные вечеринки в номерах недопустимы.</p>
+ <div class="rules">
+  <div><b>14:00</b>Начало заезда (местное время)</div>
+  <div><b>12:00</b>Расчётный час выезда</div>
+  <div><b>23:00</b>С этого времени — тишина</div>
+  <div><b>14:00</b>Поздний выезд — платная услуга, подробности на ресепшн</div>
+ </div>
+</div></section>
+
+<section data-id="contacts"><div class="wrap contact">
+ <div>
+  <div class="eyebrow">Контакты</div>
+  <h2>Забронируйте номер</h2>
+  <p class="lead">Позвоните или напишите — подберём номер на ваши даты.</p>
+  <ul>
+   <li><small>Телефоны</small><a href="tel:+73432636200">+7 (343) 263-62-00</a><br><a href="tel:+73432636202">+7 (343) 263-62-02</a><br><a href="tel:+79041769574">+7 (904) 176-95-74</a></li>
+   <li><small>Почта</small><a href="mailto:rholl@mail.ru">rholl@mail.ru</a></li>
+   <li><small>Адрес</small><a href="https://yandex.ru/maps/?text=Екатеринбург, Авиационная 57" target="_blank" rel="noopener">г. Екатеринбург, ул. Авиационная, 57</a></li>
+  </ul>
+ </div>
+ <iframe title="Карта" style="width:100%;height:380px;border:0;border-radius:18px" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=60.62%2C56.77%2C60.66%2C56.79&layer=mapnik"></iframe>
+</div></section>
+</div>
+
+<!-- ===== АПАРТАМЕНТЫ ===== -->
+<div class="obj" data-o="apt">
+<section data-id="about"><div class="wrap">
+ <div class="eyebrow">О нас</div>
+ <h2>Уютные апартаменты в самом центре</h2>
+ <p class="lead">Небольшое количество апартаментов придаёт особый домашний уют: вы будете не просто клиентом, а желанным гостем. Рядом — метро «Геологическая» и «Площадь 1905 года», ТЦ «Гринвич», ботанический сад, набережная и множество ресторанов.</p>
+ <div class="feat">
+  <div><em>📍</em><h3>Центр за 5 минут</h3><p>10 минут до главных достопримечательностей и модных магазинов.</p></div>
+  <div><em>🌳</em><h3>Набережная и сад</h3><p>Ботанический сад, набережная и торговая галерея рядом.</p></div>
+  <div><em>🔑</em><h3>Простое заселение</h3><p>После оплаты за сутки до заезда вы получите памятку с подробной инструкцией.</p></div>
+ </div>
+</div></section>
+
+<section data-id="rooms" style="background:#f3ebdb"><div class="wrap">
+ <div class="eyebrow">Фотографии</div>
+ <h2>Светло, просторно, современно</h2>
+ <div class="gal">
+  <img src="https://static.tildacdn.com/tild3033-6634-4961-b463-653366353132/4.png" alt="" loading="lazy">
+  <img src="https://static.tildacdn.com/tild6439-6431-4233-b039-336264366632/6.png" alt="" loading="lazy">
+  <img src="https://static.tildacdn.com/tild6437-6465-4266-b161-643539656333/8.png" alt="" loading="lazy">
+  <img src="https://static.tildacdn.com/tild3739-6230-4334-b438-653130626238/5.png" alt="" loading="lazy">
+  <img src="https://static.tildacdn.com/tild6461-6531-4135-b265-323365646539/9.png" alt="" loading="lazy">
+  <img src="https://static.tildacdn.com/tild3538-6136-4537-a562-666336306561/10.png" alt="" loading="lazy">
+  <img src="https://static.tildacdn.com/tild3233-3235-4465-a335-346430613261/11.png" alt="" loading="lazy">
+ </div>
+ <div style="margin-top:30px"><a class="btn" href="#contacts">Узнать свободные даты</a></div>
+</div></section>
+
+<section data-id="services"><div class="wrap">
+ <div class="eyebrow">Бронирование</div>
+ <h2>Как забронировать</h2>
+ <div class="rules" style="color:var(--ink)">
+  <div style="border-color:var(--line);background:#fff"><b>1</b>Выберите даты и напишите нам</div>
+  <div style="border-color:var(--line);background:#fff"><b>2</b>Внесите полную оплату проживания</div>
+  <div style="border-color:var(--line);background:#fff"><b>3</b>За сутки до заезда получите памятку с инструкцией</div>
+ </div>
+</div></section>
+
+<section data-id="rules" class="dark"><div class="wrap">
+ <div class="eyebrow">Правила апартаментов</div>
+ <h2>Несколько простых правил</h2>
+ <p class="lead">Мы уважаем гостей и просим уважать соседей: шумные вечеринки недопустимы. Ранний заезд и поздний выезд обсуждаются индивидуально и зависят от наличия свободных апартаментов — пожалуйста, свяжитесь с менеджером заранее.</p>
+ <div class="rules">
+  <div><b>14:00</b>Начало заезда</div>
+  <div><b>12:00</b>Выезд</div>
+  <div><b>23:00</b>С этого времени — тишина</div>
+ </div>
+</div></section>
+
+<section data-id="contacts"><div class="wrap contact">
+ <div>
+  <div class="eyebrow">Контакты</div>
+  <h2>Забронируйте апартаменты</h2>
+  <ul>
+   <li><small>Телефон</small><a href="tel:+79126258855">+7 (912) 625-88-55</a></li>
+   <li><small>Почта</small><a href="mailto:rholl@mail.ru">rholl@mail.ru</a></li>
+   <li><small>Адрес</small><a href="https://yandex.ru/maps/-/CTAkJKKC" target="_blank" rel="noopener">г. Екатеринбург, ул. Радищева, 41</a></li>
+  </ul>
+  <div class="mess">
+   <a class="wa" href="https://wa.me/79126258855?text=%D0%94%D0%BE%D0%B1%D1%80%D1%8B%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%B1%D1%80%D0%BE%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C%20%D0%B0%D0%BF%D0%B0%D1%80%D1%82%D0%B0%D0%BC%D0%B5%D0%BD%D1%82%D1%8B." target="_blank" rel="noopener">WhatsApp</a>
+   <a class="tg" href="https://t.me/+79126258855" target="_blank" rel="noopener">Telegram</a>
+   <a class="mx" href="https://max.ru/u/f9LHodD0cOItczRJUbZ5LFBGtJqM9RAUltNvIX76rAqLZdDnH-3WmO7OhEU" target="_blank" rel="noopener">MAX</a>
+  </div>
+ </div>
+ <iframe title="Карта" style="width:100%;height:380px;border:0;border-radius:18px" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=60.59%2C56.83%2C60.63%2C56.85&layer=mapnik"></iframe>
+</div></section>
+</div>
+
+<footer>© Респект-Холл, Екатеринбург · Концепт дизайна сайта (демо)</footer>
+
+<a class="btn fab" id="fab" href="tel:+73432636200">📞 Позвонить</a>
+<div id="lb"><img alt=""></div>
+
+<script>
+const heroBg={hotel:'https://static.tildacdn.com/tild3839-3561-4864-b135-316162326361/71857828.jpg',apt:'https://static.tildacdn.com/tild3033-6634-4961-b463-653366353132/4.png'};
+const phones={hotel:'tel:+73432636200',apt:'tel:+79126258855'};
+const heroEl=document.querySelector('.hero');
+function setObj(o){
+ document.querySelectorAll('.obj').forEach(e=>e.classList.toggle('on',e.dataset.o===o));
+ document.querySelectorAll('.switch button').forEach(b=>b.classList.toggle('on',b.dataset.o===o));
+ heroEl.style.backgroundImage='url('+heroBg[o]+')';
+ document.getElementById('fab').href=phones[o];
+ document.querySelectorAll('section[data-id]').forEach(x=>x.removeAttribute('id'));
+ document.querySelectorAll('.obj.on section[data-id]').forEach(x=>x.id=x.dataset.id);
+ document.querySelector('.logo').innerHTML=o==='hotel'?'РЕСПЕКТ<span>·</span>ХОЛЛ':'СВОБОДА<span>·</span>РЕСПЕКТ';
+}
+document.querySelectorAll('.switch button').forEach(b=>b.onclick=()=>setObj(b.dataset.o));
+setObj('hotel');
+const lb=document.getElementById('lb');
+document.querySelectorAll('.gal img,.card img').forEach(i=>i.onclick=()=>{lb.firstElementChild.src=i.src;lb.style.display='flex'});
+lb.onclick=()=>lb.style.display='none';
+</script>
+</body>
+</html>
